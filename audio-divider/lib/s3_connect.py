@@ -21,9 +21,8 @@ class S3Connector:
         stream_id = file_name.split('_')[2].split('.')[0]
         home_directory = os.getenv('HOME_DIRECTORY')
 
-        print(f'{home_directory}/{platform}/{client_id}/{stream_id}/audio/{title} 방송.mp3')
-        # self.s3.upload_file(
-        #     f'{path}/{file_name}',
-        #     self.bucket_name,
-        #     f'{home_directory}/{platform}/{client_id}/{stream_id}/audio/{title} 방송.mp3',
-        # )
+        self.s3.upload_file(
+            f'{path}/{file_name}',
+            self.bucket_name,
+            f'{home_directory}/{platform}/{client_id}/{stream_id}/audio/{title} 방송.mp3',
+        )

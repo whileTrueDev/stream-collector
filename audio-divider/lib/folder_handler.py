@@ -13,4 +13,4 @@ def call_file_list(path):
 
 
 def file_remover(folder_dir, file_name):
-    remove('\\'.join([folder_dir, file_name]))
+    remove('/'.join([folder_dir, file_name]))
