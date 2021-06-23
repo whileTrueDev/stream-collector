@@ -14,10 +14,9 @@ class S3Connector:
                                )
         self.bucket_name = os.getenv('AWS_BUCKET_NAME')
 
-    def upload_file(self, path, file_name, title):
+    def upload_file(self, path, file_name, title, client_id):
 
         platform = file_name.split('_')[0]
-        client_id = file_name.split('_')[1]
         stream_id = file_name.split('_')[2].split('.')[0]
         home_directory = os.getenv('HOME_DIRECTORY')
 

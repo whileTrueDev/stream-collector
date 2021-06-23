@@ -250,7 +250,7 @@ def get_video(argments):
         stream_name = 'audio_only'
 
     file_name = f'./tmp/{platform}_{user_id}_{broad_no}'
-    target_file_name = f'./{platform}/{platform}_{user_id}_{broad_no}'
+    target_file_name = f'./videos/{platform}/{platform}_{user_id}_{broad_no}.mp3' if platform == 'twitch' else f'./videos/{platform}/{platform}_{user_id}_{broad_no}'
     arg_output = file_name
     arg_url = url
     arg_player = '/Applications/VLC.app/Contents/MacOS/VLC'
