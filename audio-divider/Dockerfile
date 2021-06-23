@@ -13,11 +13,8 @@ RUN python -m pip install --upgrade pip
 COPY requirements.txt requirements.txt
 RUN pip install --no-cache-dir -r requirements.txt
 
-RUN mkdir -p /streamlink
-WORKDIR /streamlink
-ADD . /streamlink
+RUN mkdir -p /audio-divider
+WORKDIR /audio-divider
+ADD . /audio-divider
 
-COPY run.sh run.sh
-RUN chmod a+x run.sh
-
-CMD [ "./run.sh" ]
+CMD ["python", "run.py"]
