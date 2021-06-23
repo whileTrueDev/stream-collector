@@ -27,7 +27,7 @@ class Main:
         for file in call_file_list(folder_dir):
             try:
                 if platform == 'afreeca':
-                    extractor(folder_dir, tmp_folder_dir, file)
+                    extractor(folder_dir, file, platform)
                 elif platform == 'twitch':
                     compensator(folder_dir, tmp_folder_dir, file)
             except Exception as e:
