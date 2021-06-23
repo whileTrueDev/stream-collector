@@ -36,12 +36,12 @@ class DbHandler:
         return pool
 
     def get_stream_date(self, stream_id):
-        select_query = 'SELECT startDate FROM Streams WHERE streamId = %s'
+        select_query = 'SELECT startDate, creatorId FROM Streams WHERE streamId = %s'
         connection = self.conn()
         cursor = connection.cursor(pymysql.cursors.DictCursor)
         cursor.execute(select_query, stream_id)
         data = cursor.fetchall()
-        data = data[0]['startDate']
+        data = list(data[0].values())
         cursor.close()
         connection.close()
         return data
