@@ -1,4 +1,4 @@
 #!/bin/bash
 
-exec python3 client.py &
-exec python3 listener.py
+exec python /streamlink/client.py &
+exec python /streamlink/listener.py

@@ -1,7 +1,7 @@
 from multiprocessing.connection import Listener
 from datetime import datetime
 from multiprocessing import Pool, cpu_count, Manager
-from func.sl_cli import get_video
+from lib.sl_cli import get_video
 
 address = ('localhost', 6309)     # family is deduced to be 'AF_INET'
 
