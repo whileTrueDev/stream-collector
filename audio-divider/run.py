@@ -27,7 +27,7 @@ class Main:
         for file in call_file_list(folder_dir):
             try:
                 if platform == 'afreeca':
-                    extractor(folder_dir, file, platform)
+                    extractor(folder_dir, tmp_folder_dir, file)
                 elif platform == 'twitch':
                     compensator(folder_dir, tmp_folder_dir, file)
             except Exception as e:
@@ -58,11 +58,11 @@ class Main:
             pool.map(self.main, platform_list)
 
     def run(self):
-        # self.create_pool()
-        schedule.every(1).minutes.do(self.create_pool)
-        while True:
-            schedule.run_pending()
-            time.sleep(1)
+        self.create_pool()
+        # schedule.every(1).minutes.do(self.create_pool)
+        # while True:
+        #     schedule.run_pending()
+        #     time.sleep(1)
 
 
 if __name__ == '__main__':
