@@ -1,2 +1,2 @@
-twitch_target = ['173919802', '175163251']
-afreeca_target = ['dpfgc3', 'kmotiv']
+twitch_target = ['29654002', '175163251', '166079347']
+afreeca_target = ['sdkels', 'devil0108']

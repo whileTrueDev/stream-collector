@@ -41,7 +41,8 @@ class DbHandler:
         cursor = connection.cursor(pymysql.cursors.DictCursor)
         cursor.execute(select_query, stream_id)
         data = cursor.fetchall()
-        data = list(data[0].values())
+        if data:
+            data = list(data[0].values())
         cursor.close()
         connection.close()
         return data

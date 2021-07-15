@@ -8,3 +8,4 @@ def extractor(folder_dir, tmp_folder_dir, video_file):
                                fps=11025,
                                bitrate='16k',
                                )
+    clip.close()

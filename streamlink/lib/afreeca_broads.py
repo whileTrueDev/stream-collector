@@ -51,15 +51,17 @@ class AfreecaBroad:
         broad_list = result.get('broad')
 
         # page < 2 -> error
-        for i in range(2, pages + 1):
-            params['page_no'] = i
-            response = requests.get(self.URL, params=params, headers=headers)
-            result = json.loads(response.text)
+        try:
+            for i in range(2, pages + 1):
+                params['page_no'] = i
+                response = requests.get(self.URL, params=params, headers=headers)
+                result = json.loads(response.text)
 
-            if result.get('broad'):
-                new_broad_list = result.get('broad')
-                broad_list.extend(new_broad_list)
-
+                if result.get('broad'):
+                    new_broad_list = result.get('broad')
+                    broad_list.extend(new_broad_list)
+        except Exception as e:
+            print(f'{e} afreeca_broad.py 64')
         # check broad start time
         target_broads = []
         for broad in broad_list:

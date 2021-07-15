@@ -7,3 +7,4 @@ def compensator(folder_dir, tmp_folder_dir, audio_file):
                          fps=11025,
                          bitrate='16k',
                          ffmpeg_params=['-vsync', '1'])
+    clip.close()
